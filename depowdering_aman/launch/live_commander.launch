@@ -1,0 +1,7 @@
+<launch>
+    <param name="sim" type="bool" value="false" />
+    <param name="object_pose_file" type="string" value="$(find depowdering_aman)/config/test_config.csv"/>
+
+    <node name="spawn_objects"    pkg="depowdering_aman" type="generate_spawn_objects.py"   output="screen"/>
+    <node name="trajectory_commander" pkg="depowdering_aman" type="trajectory_commander.py" output="screen"/>
+</launch>
