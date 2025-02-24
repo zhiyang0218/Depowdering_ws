@@ -264,10 +264,12 @@ def motion_commander(cylinder_pose, sim = True):
         pose.pose.orientation.z = 0.0
         pose.pose.orientation.w = 0.0
 
+        column_idx = ((idx - 1) % 6) + 1
+        row_idx = ((idx - 1) // 6) + 1
         target_pose = PoseStamped()
         target_pose.header.frame_id = "world"
-        target_pose.pose.position.x = 0.0
-        target_pose.pose.position.y = 0.4
+        target_pose.pose.position.x = -0.24 + column_idx*0.05
+        target_pose.pose.position.y = 0.35 + row_idx*0.03
         target_pose.pose.position.z = 0.19
         target_pose.pose.orientation.x = 0.0
         target_pose.pose.orientation.y = 1.0
