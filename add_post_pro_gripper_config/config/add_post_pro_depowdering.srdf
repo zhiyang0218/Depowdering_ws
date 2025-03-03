@@ -43,18 +43,26 @@
     </group_state>
     <group_state name="rest" group="arm">
         <joint name="joint_1" value="0"/>
-        <joint name="joint_2" value="-0.4"/>
-        <joint name="joint_3" value="2.3"/>
-        <joint name="joint_4" value="0"/>
-        <joint name="joint_5" value="0.7"/>
+        <joint name="joint_2" value="0.24"/>
+        <joint name="joint_3" value="2.15"/>
+        <joint name="joint_4" value="0.0"/>
+        <joint name="joint_5" value="0.76"/>
         <joint name="joint_6" value="0"/>
     </group_state>
     <group_state name="ready" group="arm">
         <joint name="joint_1" value="-1.5709"/>
-        <joint name="joint_2" value="0.5"/>
-        <joint name="joint_3" value="1.9"/>
+        <joint name="joint_2" value="0.518"/>
+        <joint name="joint_3" value="1.89"/>
         <joint name="joint_4" value="0"/>
-        <joint name="joint_5" value="0.675"/>
+        <joint name="joint_5" value="0.75"/>
+        <joint name="joint_6" value="0"/>
+    </group_state>
+    <group_state name="ready_release" group="arm">
+        <joint name="joint_1" value="1.5709"/>
+        <joint name="joint_2" value="0.518"/>
+        <joint name="joint_3" value="1.89"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0.75"/>
         <joint name="joint_6" value="0"/>
     </group_state>
     <group_state name="pick" group="gripper">
