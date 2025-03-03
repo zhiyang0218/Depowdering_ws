@@ -163,8 +163,14 @@ def motion_planner(scene = None, robot = None, object_id = 0, pick_pose=None, ta
     arm_group.stop()
     arm_group.clear_pose_targets()
 
-    # Waypoint
-    arm_group.set_named_target("rest")
+    # go to ready
+    arm_group.set_named_target("ready")
+    arm_group.go(wait=True)
+    arm_group.stop()
+    arm_group.clear_pose_targets()
+    
+    # go to ready_relese
+    arm_group.set_named_target("ready_release")
     arm_group.go(wait=True)
     arm_group.stop()
     arm_group.clear_pose_targets()
@@ -193,11 +199,11 @@ def motion_planner(scene = None, robot = None, object_id = 0, pick_pose=None, ta
     arm_group.go(wait=True)
     arm_group.stop()
     arm_group.clear_pose_targets()
-
+'''
     if sim:
         delete_model(f"cylinder_{object_id}")
     scene.remove_world_object(f"part_{object_id}")
-    
+'''    
 
 def motion_commander(cylinder_pose, sim = True):
     # Initialize the moveit_commander
