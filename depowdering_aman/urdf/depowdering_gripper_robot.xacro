@@ -284,12 +284,12 @@
 				<color rgba="1 1 1 1" />
 			</material>
 		</visual>
-		<!-- <collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
+		<collision>
+			<origin xyz="0 0 -0.05" rpy="0 0 0" />
 			<geometry>
 				<mesh filename="package://add_post_pro_simulation/mesh/gripper_Link.STL" />
 			</geometry>
-		</collision> -->
+		</collision> 
 	</link>
 	
 	<joint name="gripper_base_Joint" type="fixed">
