@@ -42,9 +42,18 @@
   </include>
 
   <!-- Passthrough Filter -->
+  <!-- Static TFs for L515 frames -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="depth_tf"
+        args="0 0 0 0 0 0 l515_link l515_depth_frame $(arg tf_publish_rate)" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="depth_optical_tf"
+        args="0 0 0 0 0 0 l515_depth_frame l515_depth_optical_frame $(arg tf_publish_rate)" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="color_tf"
+        args="0 0 0 0 0 0 l515_link l515_color_frame $(arg tf_publish_rate)" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="color_optical_tf"
+        args="0 0 0 0 0 0 l515_color_frame l515_color_optical_frame $(arg tf_publish_rate)" />
   <node pkg="nodelet" type="nodelet" name="passthrough_filter" args="standalone pcl/PassThrough">
     <param name="filter_field_name" value="z"/>
-    <param name="filter_limit_min"  value="0.2"/>
+    <param name="filter_limit_min"  value="0.78"/>
     <param name="filter_limit_max"  value="1.0"/>
     <param name="tf_cache_time"     value="1.0"/>     <!-- Buffer time -->
     <param name="tf_tolerance"      value="0.05"/>    <!-- Tolerance (seconds) -->
