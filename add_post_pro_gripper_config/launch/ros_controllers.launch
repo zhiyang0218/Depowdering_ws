@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find add_post_pro_gripper_config)/config/ros_controllers.yaml" command="load"/>
+
+  <!-- Load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" 
+      ns="/add_post_pro_depowdering" output="screen" 
+      args=" --namespace=/add_post_pro_depowdering
+      joint_state_controller
+      arm_controller 
+      gripper_controller 
+      --timeout 20"/>
+
+</launch>

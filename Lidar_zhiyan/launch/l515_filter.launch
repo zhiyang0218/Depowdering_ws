@@ -1,0 +1,16 @@
+<launch>
+  <!-- Start a nodelet manager -->
+  <node pkg="nodelet" type="nodelet" name="nodelet_manager" args="manager" output="screen"/>
+
+  <!-- Load the PassThrough filter nodelet -->
+  <node pkg="nodelet" type="nodelet" name="passthrough_z" args="load pcl/PassThrough nodelet_manager" output="screen">
+    <!-- Filter along the Z-axis (depth) -->
+    <param name="filter_field_name" value="z" />
+    <param name="filter_limit_min" value="0.2" />
+    <param name="filter_limit_max" value="1.0" />
+    
+    <!-- Adjust input/output topics -->
+    <remap from="~input"  to="/camera/depth/color/points" />  <!-- Input topic (check your LiDAR's actual topic) -->
+    <remap from="~output" to="/filtered_points" />            <!-- Output topic -->
+  </node>
+</launch>
