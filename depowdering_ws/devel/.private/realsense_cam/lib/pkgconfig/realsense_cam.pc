@@ -1,8 +1,0 @@
-prefix=/home/cerlab/depowdering_ws/devel/.private/realsense_cam
-
-Name: realsense_cam
-Description: Description of realsense_cam
-Version: 0.1.0
-Cflags: -I/home/cerlab/depowdering_ws/devel/.private/realsense_cam/include
-Libs: -L${prefix}/lib 
-Requires: 

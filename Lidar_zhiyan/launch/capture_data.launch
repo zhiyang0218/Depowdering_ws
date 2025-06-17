@@ -1,7 +1,0 @@
-<launch>
-  <!-- Start LiDAR and filter -->
-  <include file="$(find Lidar_zhiyan)/launch/lidar_filter.launch"/>
-
-  <!-- Run capture node (one-time snapshot) -->
-  <node pkg="Lidar_zhiyan" type="capture_points.py" name="capture_points" output="screen"/>
-</launch>

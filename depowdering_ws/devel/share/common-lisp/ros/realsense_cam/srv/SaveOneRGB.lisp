@@ -1,1 +1,0 @@
-/home/cerlab/depowdering_ws/devel/.private/realsense_cam/share/common-lisp/ros/realsense_cam/srv/SaveOneRGB.lisp

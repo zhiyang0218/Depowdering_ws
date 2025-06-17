@@ -1,8 +1,0 @@
-prefix=/home/cerlab/depowdering_ws/install
-
-Name: add_post_pro_config
-Description: Description of add_post_pro_config
-Version: 0.3.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

@@ -1,1 +1,0 @@
-/home/cerlab/depowdering_ws/devel/.private/denso_robot_core/share/denso_robot_core/msg/MoveValueFeedback.msg

@@ -1,4 +1,0 @@
-[35m[1mScanning dependencies of target panda_panda_arm_moveit_ikfast_plugin[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/panda_panda_arm_moveit_ikfast_plugin.dir/src/panda_panda_arm_ikfast_moveit_plugin.cpp.o[0m
-[100%] [32m[1mLinking CXX shared library /home/cerlab/depowdering_ws/devel/.private/panda_panda_arm_ikfast_plugin/lib/libpanda_panda_arm_moveit_ikfast_plugin.so[0m
-[100%] Built target panda_panda_arm_moveit_ikfast_plugin

@@ -1,8 +1,0 @@
-prefix=/home/cerlab/depowdering_ws/install
-
-Name: add_post_pro_robot
-Description: Description of add_post_pro_robot
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

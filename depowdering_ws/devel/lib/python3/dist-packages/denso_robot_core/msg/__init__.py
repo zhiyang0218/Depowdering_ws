@@ -1,1 +1,0 @@
-/home/cerlab/depowdering_ws/devel/.private/denso_robot_core/lib/python3/dist-packages/denso_robot_core/msg/__init__.py

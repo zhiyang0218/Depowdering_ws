@@ -1,8 +1,0 @@
-prefix=/home/cerlab/depowdering_ws/devel/.private/vs6577_ikfast_arm_plugin
-
-Name: vs6577_ikfast_arm_plugin
-Description: Description of vs6577_ikfast_arm_plugin
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

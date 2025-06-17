@@ -1,1 +1,0 @@
-/home/cerlab/depowdering_ws/devel/.private/pcl_sensor_data/share/gennodejs/ros/pcl_sensor_data/srv/ProcessPointcloud.js
