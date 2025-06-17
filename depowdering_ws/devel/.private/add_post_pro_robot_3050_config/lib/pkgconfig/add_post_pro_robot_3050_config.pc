@@ -1,0 +1,8 @@
+prefix=/home/cerlab/depowdering_ws/devel/.private/add_post_pro_robot_3050_config
+
+Name: add_post_pro_robot_3050_config
+Description: Description of add_post_pro_robot_3050_config
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

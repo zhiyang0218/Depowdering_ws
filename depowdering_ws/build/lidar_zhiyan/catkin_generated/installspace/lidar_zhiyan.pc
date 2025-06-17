@@ -1,0 +1,8 @@
+prefix=/home/cerlab/depowdering_ws/install
+
+Name: lidar_zhiyan
+Description: Description of lidar_zhiyan
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

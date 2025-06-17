@@ -1,0 +1,1 @@
+/home/cerlab/depowdering_ws/devel/.private/realsense_cam/share/roseus/ros/realsense_cam/srv/FindWorkspaceCenter.l

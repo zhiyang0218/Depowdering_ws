@@ -1,0 +1,8 @@
+prefix=/home/cerlab/depowdering_ws/devel/.private/denso_robot_descriptions
+
+Name: denso_robot_descriptions
+Description: Description of denso_robot_descriptions
+Version: 3.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

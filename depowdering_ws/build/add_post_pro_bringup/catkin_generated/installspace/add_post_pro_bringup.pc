@@ -1,0 +1,8 @@
+prefix=/home/cerlab/depowdering_ws/install
+
+Name: add_post_pro_bringup
+Description: Description of add_post_pro_bringup
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib -ldepowdering_bringup
+Requires: denso_robot_control roscpp rospy std_msgs sensor_msgs

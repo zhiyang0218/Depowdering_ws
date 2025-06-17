@@ -1,0 +1,4 @@
+<launch>
+    <node name="spawn_objects"    pkg="depowdering_aman" type="generate_spawn_objects.py"   output="screen"/>
+    <node name="trajectory_commander" pkg="depowdering_aman" type="trajectory_commander.py" output="screen"/>
+</launch>

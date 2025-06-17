@@ -1,0 +1,4 @@
+Start the docker container
+docker run -e DISPLAY=$DISPLAY -v /home/achulawa/depowedering__ws:/home/catkin_ws -it --gpus all --rm --name depowdering-container --network=host depowdering-ros
+
+Change the volume as required

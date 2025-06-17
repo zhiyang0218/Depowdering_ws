@@ -1,0 +1,4 @@
+vs6577_moveit_config
+/home/cerlab/depowdering_ws/devel/.private/vs6577_moveit_config/lib/pkgconfig/vs6577_moveit_config.pc /home/cerlab/depowdering_ws/devel/lib/pkgconfig/vs6577_moveit_config.pc
+/home/cerlab/depowdering_ws/devel/.private/vs6577_moveit_config/share/vs6577_moveit_config/cmake/vs6577_moveit_configConfig-version.cmake /home/cerlab/depowdering_ws/devel/share/vs6577_moveit_config/cmake/vs6577_moveit_configConfig-version.cmake
+/home/cerlab/depowdering_ws/devel/.private/vs6577_moveit_config/share/vs6577_moveit_config/cmake/vs6577_moveit_configConfig.cmake /home/cerlab/depowdering_ws/devel/share/vs6577_moveit_config/cmake/vs6577_moveit_configConfig.cmake

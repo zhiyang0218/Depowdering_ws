@@ -1,0 +1,1 @@
+/home/cerlab/depowdering_ws/devel/.private/bcap_core/share/bcap_core/cmake/bcap_coreConfig-version.cmake

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <node pkg="add_post_pro_simulation" name="add_object_in_planning_vaccum_scene" type="add_object_in_planning_vaccum_scene.py" output="screen" />
+</launch>

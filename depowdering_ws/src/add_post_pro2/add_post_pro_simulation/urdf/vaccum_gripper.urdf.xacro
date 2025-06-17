@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<robot name="vaccum_gripper">
+  <!--########### adding vaccum ##########-->
+<link name="vaccum_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1.0"/>
+       <inertia ixx="0" ixy="0.0" ixz="0.0" iyy="0" iyz="0.0" izz="0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh
+          filename="package://add_post_pro_simulation/mesh/Blower_Tool_v2.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      
+      <material name="red">
+        <color rgba="1 0.2 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh
+        filename="package://add_post_pro_simulation/mesh/Blower_Tool_v2.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+    <joint name="vaccum_joint" type="fixed">
+        <parent link="J6" />
+        <child link="vaccum_link" />
+        <origin rpy="-1.571000 0.000000 0.000000" xyz="-0.0450000 -0.0450000 0.120000" />
+        <axis xyz="-0.000000 -0.000000 0.000000" />
+        <!--limit effort="100" lower="-2.076942" upper="2.949606" velocity="1" /-->
+        <dynamics damping="0" friction="0" />
+    </joint>
+
+<!--########### end adding vaccum ##########-->
+  <gazebo reference="vaccum_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+</robot>

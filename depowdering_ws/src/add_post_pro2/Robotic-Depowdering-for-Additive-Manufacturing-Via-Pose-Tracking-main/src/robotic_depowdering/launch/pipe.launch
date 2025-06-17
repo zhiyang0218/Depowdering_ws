@@ -1,0 +1,17 @@
+<launch>
+    <arg name = "camera" default = "camera"/>
+    <group ns = "$(arg camera)">
+        <node pkg = "robotic_depowdering" type = "icp_tracker" name = "icp_tracker" output = "screen"/>
+        <param name = "CAD_initial_X" type = "double" value = "0.5"/>
+        <param name = "CAD_initial_Y" type = "double" value = "0.0"/>
+        <param name = "CAD_initial_Z" type = "double" value = "-6.0"/>
+        <param name = "scale_factor" type = "double" value = "100.0"/> 
+        <param name = "voxelLeafSize" type = "double" value = "0.5"/>
+        <param name = "deltaProgress" type = "double" value = "0.1"/>
+        <param name = "deltaRotation" type = "double" value = "15.0"/>
+        <param name = "deltaTranslation" type = "double" value = "5.0"/>
+        <param name = "startTrackingThreshold" type = "double" value = "0.3"/>     
+        <param name = "templateUpdateDistThreshold" type = "double" value = "0.8"/>
+        <param name = "pathCAD" type = "string" value = "$(find robotic_depowdering)/data/pipe_cm.xyz"/>
+    </group>
+</launch>

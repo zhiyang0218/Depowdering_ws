@@ -1,0 +1,15 @@
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target _bcap_service_generate_messages_check_deps_variant
+[  0%] Built target _bcap_service_generate_messages_check_deps_bcap
+[  0%] Built target std_msgs_generate_messages_nodejs
+[ 29%] Built target bcap_service_generate_messages_cpp
+[ 29%] Built target bcap_service_generate_messages_eus
+[ 52%] Built target bcap_service_generate_messages_py
+[ 64%] Built target bcap_service_generate_messages_lisp
+[ 76%] Built target bcap_service_generate_messages_nodejs
+[ 88%] Built target bcap_service_exec
+[100%] Built target bcap_service
+[100%] Built target bcap_service_generate_messages

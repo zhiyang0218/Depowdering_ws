@@ -1,0 +1,14 @@
+<launch>
+  <!-- Pass the constraints file and planning group as arguments -->
+  <arg name="constraints_file" default="$(find add_post_pro_gripper_config)/config/constraints.yaml" />
+  <arg name="planning_group" default="arm" />
+
+  <node name="generate_state_database" pkg="add_post_pro_gripper_config" type="generate_state_database" output="screen">
+    <param name="constraints_file" value="$(arg constraints_file)"/>
+    <param name="planning_group" value="$(arg planning_group)"/>
+    <!-- You can add more parameters if needed -->
+    
+    <rosparam ns="constraints" command="load" file="$(arg constraints_file)"/>
+  </node>
+</launch>
+

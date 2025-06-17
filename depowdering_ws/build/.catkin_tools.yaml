@@ -1,0 +1,6 @@
+devel_space: /home/cerlab/depowdering_ws/devel
+install: false
+install_space: /home/cerlab/depowdering_ws/install
+profile: default
+source_space: /home/cerlab/depowdering_ws/src
+workspace: /home/cerlab/depowdering_ws

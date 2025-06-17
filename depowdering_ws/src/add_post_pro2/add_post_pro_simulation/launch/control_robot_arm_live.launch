@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <node pkg="add_post_pro_simulation" name="control_robot_arm" type="control_robot_arm_live.py" output="screen" />
+</launch>

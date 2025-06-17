@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- This launch file will create nodes responsible for live robot manipulation -->
+<launch>
+
+<!--node name="add_object_in_planning_scene" pkg="add_post_pro_simulation" type="add_object_in_planning_scene.py" output="screen"/-->
+<node name="control_robot_arm" pkg="add_post_pro_simulation" type="control_robot_arm.py" output="screen"/>
+
+</launch>
+
+
+
+

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="add_post_pro_depowdering">
+
+  <!-- Include the robot xacro file -->
+  <xacro:include filename="$(find denso_robot_descriptions)/vs6577_description/urdf/vs6577.urdf.xacro" />
+  
+  <!-- Include the gripper xacro file -->
+  <xacro:include filename="$(find add_post_pro_simulation)/urdf/wire_gripper.urdf" />
+
+</robot>

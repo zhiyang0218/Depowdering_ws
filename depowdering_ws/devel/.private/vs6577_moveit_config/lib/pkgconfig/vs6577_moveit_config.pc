@@ -1,0 +1,8 @@
+prefix=/home/cerlab/depowdering_ws/devel/.private/vs6577_moveit_config
+
+Name: vs6577_moveit_config
+Description: Description of vs6577_moveit_config
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

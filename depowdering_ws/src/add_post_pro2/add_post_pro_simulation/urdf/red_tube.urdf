@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="my_box">
+  <link name="box_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1.0"/>
+       <inertia ixx="0.0833" ixy="0.0" ixz="0.0" iyy="0.0833" iyz="0.0" izz="0.1667"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.025" radius="0.0025"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0.2 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.025" radius="0.0025"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="box_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+</robot>

@@ -1,0 +1,1 @@
+/home/cerlab/depowdering_ws/devel/.private/lidar_zhiyan/share/lidar_zhiyan/cmake/lidar_zhiyanConfig-version.cmake

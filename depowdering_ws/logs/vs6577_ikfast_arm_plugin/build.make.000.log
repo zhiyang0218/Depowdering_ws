@@ -1,0 +1,4 @@
+[35m[1mScanning dependencies of target vs6577_arm_moveit_ikfast_plugin[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/vs6577_arm_moveit_ikfast_plugin.dir/src/vs6577_arm_ikfast_moveit_plugin.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library /home/cerlab/depowdering_ws/devel/.private/vs6577_ikfast_arm_plugin/lib/libvs6577_arm_moveit_ikfast_plugin.so[0m
+[100%] Built target vs6577_arm_moveit_ikfast_plugin

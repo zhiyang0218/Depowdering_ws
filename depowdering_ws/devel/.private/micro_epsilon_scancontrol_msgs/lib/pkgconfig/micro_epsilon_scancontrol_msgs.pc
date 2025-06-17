@@ -1,0 +1,8 @@
+prefix=/home/cerlab/depowdering_ws/devel/.private/micro_epsilon_scancontrol_msgs
+
+Name: micro_epsilon_scancontrol_msgs
+Description: Description of micro_epsilon_scancontrol_msgs
+Version: 0.0.1
+Cflags: -I/home/cerlab/depowdering_ws/devel/.private/micro_epsilon_scancontrol_msgs/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime

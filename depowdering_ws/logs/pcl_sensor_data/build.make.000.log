@@ -1,0 +1,89 @@
+[35m[1mScanning dependencies of target _pcl_sensor_data_generate_messages_check_deps_StartRecording[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target _pcl_sensor_data_generate_messages_check_deps_laserMax[0m
+[35m[1mScanning dependencies of target _pcl_sensor_data_generate_messages_check_deps_ProcessPointcloud[0m
+[35m[1mScanning dependencies of target _pcl_sensor_data_generate_messages_check_deps_angleAdjust[0m
+[35m[1mScanning dependencies of target _pcl_sensor_data_generate_messages_check_deps_avgZDistance[0m
+[35m[1mScanning dependencies of target _pcl_sensor_data_generate_messages_check_deps_RestartRecording[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target _pcl_sensor_data_generate_messages_check_deps_StopRecording[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_nodejs[0m
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_nodejs
+[35m[1mScanning dependencies of target std_msgs_generate_messages_eus[0m
+[  0%] Built target _pcl_sensor_data_generate_messages_check_deps_RestartRecording
+[  0%] Built target _pcl_sensor_data_generate_messages_check_deps_ProcessPointcloud
+[  0%] Built target _pcl_sensor_data_generate_messages_check_deps_angleAdjust
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target _pcl_sensor_data_generate_messages_check_deps_StartRecording
+[  0%] Built target _pcl_sensor_data_generate_messages_check_deps_laserMax
+[  0%] Built target _pcl_sensor_data_generate_messages_check_deps_avgZDistance
+[  0%] Built target _pcl_sensor_data_generate_messages_check_deps_StopRecording
+[35m[1mScanning dependencies of target pcl_sensor_data_generate_messages_py[0m
+[35m[1mScanning dependencies of target pcl_sensor_data_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target pcl_sensor_data_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target pcl_sensor_data_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target pcl_sensor_data_generate_messages_eus[0m
+[  8%] [34m[1mGenerating Python code from SRV pcl_sensor_data/laserMax[0m
+[  8%] [34m[1mGenerating Lisp code from pcl_sensor_data/avgZDistance.srv[0m
+[ 11%] [34m[1mGenerating Python code from SRV pcl_sensor_data/RestartRecording[0m
+[ 11%] [34m[1mGenerating Python code from SRV pcl_sensor_data/avgZDistance[0m
+[ 15%] [34m[1mGenerating Python code from SRV pcl_sensor_data/StopRecording[0m
+[ 15%] [34m[1mGenerating Python code from SRV pcl_sensor_data/angleAdjust[0m
+[ 15%] [34m[1mGenerating Python code from SRV pcl_sensor_data/StartRecording[0m
+[ 17%] [34m[1mGenerating C++ code from pcl_sensor_data/avgZDistance.srv[0m
+[ 20%] [34m[1mGenerating EusLisp code from pcl_sensor_data/avgZDistance.srv[0m
+[ 22%] [34m[1mGenerating Python code from SRV pcl_sensor_data/ProcessPointcloud[0m
+[ 24%] [34m[1mGenerating Javascript code from pcl_sensor_data/avgZDistance.srv[0m
+[ 26%] [34m[1mGenerating Lisp code from pcl_sensor_data/angleAdjust.srv[0m
+[ 28%] [34m[1mGenerating Javascript code from pcl_sensor_data/angleAdjust.srv[0m
+[ 31%] [34m[1mGenerating C++ code from pcl_sensor_data/angleAdjust.srv[0m
+[ 33%] [34m[1mGenerating C++ code from pcl_sensor_data/laserMax.srv[0m
+[ 35%] [34m[1mGenerating Javascript code from pcl_sensor_data/laserMax.srv[0m
+[ 37%] [34m[1mGenerating Lisp code from pcl_sensor_data/laserMax.srv[0m
+[ 40%] [34m[1mGenerating EusLisp code from pcl_sensor_data/angleAdjust.srv[0m
+[ 42%] [34m[1mGenerating Lisp code from pcl_sensor_data/ProcessPointcloud.srv[0m
+[ 46%] [34m[1mGenerating Lisp code from pcl_sensor_data/StartRecording.srv[0m
+[ 46%] [34m[1mGenerating EusLisp code from pcl_sensor_data/ProcessPointcloud.srv[0m
+[ 48%] [34m[1mGenerating Lisp code from pcl_sensor_data/StopRecording.srv[0m
+[ 51%] [34m[1mGenerating EusLisp code from pcl_sensor_data/laserMax.srv[0m
+[ 53%] [34m[1mGenerating Python srv __init__.py for pcl_sensor_data[0m
+[ 55%] [34m[1mGenerating Javascript code from pcl_sensor_data/ProcessPointcloud.srv[0m
+[ 57%] [34m[1mGenerating Lisp code from pcl_sensor_data/RestartRecording.srv[0m
+[ 60%] [34m[1mGenerating Javascript code from pcl_sensor_data/StartRecording.srv[0m
+[ 62%] [34m[1mGenerating Javascript code from pcl_sensor_data/StopRecording.srv[0m
+[ 64%] [34m[1mGenerating Javascript code from pcl_sensor_data/RestartRecording.srv[0m
+[ 66%] [34m[1mGenerating C++ code from pcl_sensor_data/ProcessPointcloud.srv[0m
+[ 68%] [34m[1mGenerating EusLisp code from pcl_sensor_data/StartRecording.srv[0m
+[ 68%] Built target pcl_sensor_data_generate_messages_lisp
+[ 71%] [34m[1mGenerating C++ code from pcl_sensor_data/StartRecording.srv[0m
+[ 73%] [34m[1mGenerating EusLisp code from pcl_sensor_data/StopRecording.srv[0m
+[ 75%] [34m[1mGenerating EusLisp code from pcl_sensor_data/RestartRecording.srv[0m
+[ 77%] [34m[1mGenerating C++ code from pcl_sensor_data/RestartRecording.srv[0m
+[ 80%] [34m[1mGenerating C++ code from pcl_sensor_data/StopRecording.srv[0m
+[ 80%] Built target pcl_sensor_data_generate_messages_nodejs
+[ 82%] [34m[1mGenerating EusLisp manifest code for pcl_sensor_data[0m
+[ 82%] Built target pcl_sensor_data_generate_messages_py
+[ 82%] Built target pcl_sensor_data_generate_messages_cpp
+[ 82%] Built target pcl_sensor_data_generate_messages_eus
+[35m[1mScanning dependencies of target pcl_sensor_data_generate_messages[0m
+[35m[1mScanning dependencies of target laser_processor[0m
+[35m[1mScanning dependencies of target test_node[0m
+[35m[1mScanning dependencies of target laser_playground[0m
+[35m[1mScanning dependencies of target access_data[0m
+[ 82%] Built target pcl_sensor_data_generate_messages
+[ 84%] [32mBuilding CXX object CMakeFiles/test_node.dir/src/test_node.cpp.o[0m
+[ 86%] [32mBuilding CXX object CMakeFiles/access_data.dir/src/access_data.cpp.o[0m
+[ 88%] [32mBuilding CXX object CMakeFiles/laser_processor.dir/src/laser_processor.cpp.o[0m
+[ 91%] [32mBuilding CXX object CMakeFiles/laser_playground.dir/src/laser_playground.cpp.o[0m
+[ 93%] [32m[1mLinking CXX executable /home/cerlab/depowdering_ws/devel/.private/pcl_sensor_data/lib/pcl_sensor_data/test_node[0m
+[ 93%] Built target test_node
+[ 95%] [32m[1mLinking CXX executable /home/cerlab/depowdering_ws/devel/.private/pcl_sensor_data/lib/pcl_sensor_data/laser_processor[0m
+[ 95%] Built target laser_processor
+[ 97%] [32m[1mLinking CXX executable /home/cerlab/depowdering_ws/devel/.private/pcl_sensor_data/lib/pcl_sensor_data/laser_playground[0m
+[ 97%] Built target laser_playground
+[100%] [32m[1mLinking CXX executable /home/cerlab/depowdering_ws/devel/.private/pcl_sensor_data/lib/pcl_sensor_data/access_data[0m
+[100%] Built target access_data

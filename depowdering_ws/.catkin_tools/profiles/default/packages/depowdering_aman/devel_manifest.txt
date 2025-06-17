@@ -1,0 +1,4 @@
+add_post_pro2/depowdering_aman
+/home/cerlab/depowdering_ws/devel/.private/depowdering_aman/lib/pkgconfig/depowdering_aman.pc /home/cerlab/depowdering_ws/devel/lib/pkgconfig/depowdering_aman.pc
+/home/cerlab/depowdering_ws/devel/.private/depowdering_aman/share/depowdering_aman/cmake/depowdering_amanConfig-version.cmake /home/cerlab/depowdering_ws/devel/share/depowdering_aman/cmake/depowdering_amanConfig-version.cmake
+/home/cerlab/depowdering_ws/devel/.private/depowdering_aman/share/depowdering_aman/cmake/depowdering_amanConfig.cmake /home/cerlab/depowdering_ws/devel/share/depowdering_aman/cmake/depowdering_amanConfig.cmake

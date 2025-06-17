@@ -1,0 +1,1 @@
+/home/cerlab/depowdering_ws/devel/.private/bcap_service/share/roseus/ros/bcap_service/manifest.l

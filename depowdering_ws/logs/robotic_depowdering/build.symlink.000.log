@@ -1,0 +1,5 @@
+Symlinking /home/cerlab/depowdering_ws/devel/lib/robotic_depowdering/icp_tracker
+Symlinking /home/cerlab/depowdering_ws/devel/lib/robotic_depowdering/path_planner
+Symlinking /home/cerlab/depowdering_ws/devel/lib/pkgconfig/robotic_depowdering.pc
+Symlinking /home/cerlab/depowdering_ws/devel/share/robotic_depowdering/cmake/robotic_depowderingConfig.cmake
+Symlinking /home/cerlab/depowdering_ws/devel/share/robotic_depowdering/cmake/robotic_depowderingConfig-version.cmake

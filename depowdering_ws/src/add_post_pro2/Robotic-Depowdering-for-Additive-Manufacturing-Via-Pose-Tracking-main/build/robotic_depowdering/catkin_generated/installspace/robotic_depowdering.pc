@@ -1,0 +1,8 @@
+prefix=/home/abdulhamid/Downloads/Robotic-Depowdering-for-Additive-Manufacturing-Via-Pose-Tracking-main/install
+
+Name: robotic_depowdering
+Description: Description of robotic_depowdering
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

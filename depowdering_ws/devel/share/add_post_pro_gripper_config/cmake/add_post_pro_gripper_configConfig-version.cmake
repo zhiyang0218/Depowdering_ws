@@ -1,0 +1,1 @@
+/home/cerlab/depowdering_ws/devel/.private/add_post_pro_gripper_config/share/add_post_pro_gripper_config/cmake/add_post_pro_gripper_configConfig-version.cmake

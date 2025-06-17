@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="add_post_pro_robot">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="arm">
+        <joint name="joint_w" />
+        <joint name="joint_1" />
+        <joint name="joint_2" />
+        <joint name="joint_3" />
+        <joint name="joint_4" />
+        <joint name="joint_5" />
+        <joint name="joint_6" />
+    </group>
+  
+    <!-- <group name="gripper">
+        <joint name="wire_joint" />
+    </group> -->
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+   
+    <group_state name="vaccum_gripper" group="arm">
+        <joint name="joint_1" value="0.11001078020418298" />
+        <joint name="joint_2" value="-0.2428646888177184" />
+        <joint name="joint_3" value="-1.4391212026047508" />
+        <joint name="joint_4" value="-3.1453938152106033" />
+        <joint name="joint_5" value="1.4232600343275505" />
+        <joint name="joint_6" value="3.251207266248297" />
+    </group_state>
+    <group_state name="wire_gripper" group="arm">
+        <joint name="joint_1" value="-0.46974182524931596" />
+        <joint name="joint_2" value="-0.3906364557462041" />
+        <joint name="joint_3" value="-1.3249572783374637" />
+        <joint name="joint_4" value="-3.125073499616582" />
+        <joint name="joint_5" value="1.3938063233863245" />
+        <joint name="joint_6" value="2.6694290447415883" />
+    </group_state>
+    <group_state name="depowdering_vaccum" group="arm">
+        <joint name="joint_1" value="-1.4756648143635864" />
+        <joint name="joint_2" value="-0.91874926682405" />
+        <joint name="joint_3" value="-1.059399690432346" />
+        <joint name="joint_4" value="3.090882959118959" />
+        <joint name="joint_5" value="1.130258959764114" />
+        <joint name="joint_6" value="-1.5112075798155211" />
+    </group_state>
+    <group_state name="detect_pose" group="arm">
+        <joint name="joint_1" value="-1.675924162071757" />
+        <joint name="joint_2" value="-0.7895411066469213" />
+        <joint name="joint_3" value="-0.6237844947730284" />
+        <joint name="joint_4" value="3.1030938676273454" />
+        <joint name="joint_5" value="1.6858755045757547" />
+        <joint name="joint_6" value="-1.6970857457611461" />
+    </group_state>
+    <group_state name="rough_depowdering_orientation" group="arm">
+        <joint name="joint_1" value="1.57" />
+        <joint name="joint_2" value="-0.431" />
+        <joint name="joint_3" value="2.3942" />
+        <joint name="joint_4" value="0" />
+        <joint name="joint_5" value="0.729" />
+        <joint name="joint_6" value="-1.6315" />
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="tool_mount" parent_link="EEF_tool_mount" group="arm" parent_group="arm" />
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="D415_camera" link2="EEF_scancontrol" reason="Never" />
+    <disable_collisions link1="D415_camera" link2="EEF_sensor_holder" reason="Adjacent" />
+    <disable_collisions link1="D415_camera" link2="EEF_tool_mount" reason="Never" />
+    <disable_collisions link1="D415_camera" link2="J3" reason="Never" />
+    <disable_collisions link1="D415_camera" link2="J5" reason="Never" />
+    <disable_collisions link1="D415_camera" link2="J6" reason="Never" />
+    <disable_collisions link1="D415_camera" link2="depstech_camera_link" reason="Never" />
+    <disable_collisions link1="EEF_scancontrol" link2="EEF_sensor_holder" reason="Adjacent" />
+    <disable_collisions link1="EEF_scancontrol" link2="EEF_tool_mount" reason="Never" />
+    <disable_collisions link1="EEF_scancontrol" link2="J3" reason="Never" />
+    <disable_collisions link1="EEF_scancontrol" link2="J5" reason="Never" />
+    <disable_collisions link1="EEF_scancontrol" link2="J6" reason="Never" />
+    <disable_collisions link1="EEF_scancontrol" link2="depstech_camera_link" reason="Never" />
+    <disable_collisions link1="EEF_sensor_holder" link2="EEF_tool_mount" reason="Default" />
+    <disable_collisions link1="EEF_sensor_holder" link2="J3" reason="Never" />
+    <disable_collisions link1="EEF_sensor_holder" link2="J5" reason="Never" />
+    <disable_collisions link1="EEF_sensor_holder" link2="J6" reason="Adjacent" />
+    <disable_collisions link1="EEF_sensor_holder" link2="depstech_camera_link" reason="Adjacent" />
+    <disable_collisions link1="EEF_tool_mount" link2="J2" reason="Never" />
+    <disable_collisions link1="EEF_tool_mount" link2="J3" reason="Never" />
+    <disable_collisions link1="EEF_tool_mount" link2="J5" reason="Never" />
+    <disable_collisions link1="EEF_tool_mount" link2="J6" reason="Adjacent" />
+    <disable_collisions link1="EEF_tool_mount" link2="depstech_camera_link" reason="Never" />
+    <disable_collisions link1="J1" link2="J2" reason="Adjacent" />
+    <disable_collisions link1="J1" link2="base_link" reason="Adjacent" />
+
+    <disable_collisions link1="J2" link2="J3" reason="Adjacent" />
+    <disable_collisions link1="J2" link2="J4" reason="Never" />
+    <disable_collisions link1="J2" link2="J5" reason="Never" />
+    <disable_collisions link1="J2" link2="J6" reason="Never" />
+    <disable_collisions link1="J2" link2="base_link" reason="Never" />
+
+    <disable_collisions link1="J3" link2="J4" reason="Adjacent" />
+    <disable_collisions link1="J3" link2="J5" reason="Never" />
+    <disable_collisions link1="J3" link2="J6" reason="Never" />
+    <disable_collisions link1="J3" link2="depstech_camera_link" reason="Never" />
+    <disable_collisions link1="J4" link2="J5" reason="Adjacent" />
+    <disable_collisions link1="J4" link2="J6" reason="Never" />
+    <disable_collisions link1="J4" link2="depstech_camera_link" reason="Never" />
+    <disable_collisions link1="J5" link2="J6" reason="Adjacent" />
+    <disable_collisions link1="J5" link2="depstech_camera_link" reason="Never" />
+    <disable_collisions link1="J6" link2="depstech_camera_link" reason="Never" />
+
+  
+    <!-- <disable_collisions link1="EEF_tool_mount" link2="gripper_link" reason="Adjacent" />
+    <disable_collisions link1="EEF_sensor_holder" link2="gripper_link" reason="Adjacent" />
+    <disable_collisions link1="gripper_link" link2="wire_link" reason="Adjacent" />
+    <disable_collisions link1="D415_camera" link2="gripper_link" reason="Adjacent" />
+    <disable_collisions link1="EEF_scancontrol" link2="gripper_link" reason="Adjacent" /> -->
+</robot>

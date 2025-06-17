@@ -1,0 +1,8 @@
+prefix=/home/cerlab/depowdering_ws/devel/.private/denso_robot_core
+
+Name: denso_robot_core
+Description: Description of denso_robot_core
+Version: 3.1.0
+Cflags: -I/home/cerlab/depowdering_ws/devel/.private/denso_robot_core/include -I/home/cerlab/depowdering_ws/src/add_post_pro2/denso_robot_ros/denso_robot_core/include
+Libs: -L${prefix}/lib -ldenso_robot_core
+Requires: actionlib actionlib_msgs bcap_core bcap_service message_runtime roscpp std_msgs

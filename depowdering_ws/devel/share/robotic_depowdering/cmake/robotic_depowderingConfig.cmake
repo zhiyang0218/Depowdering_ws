@@ -1,0 +1,1 @@
+/home/cerlab/depowdering_ws/devel/.private/robotic_depowdering/share/robotic_depowdering/cmake/robotic_depowderingConfig.cmake

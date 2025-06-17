@@ -1,0 +1,1 @@
+/home/cerlab/depowdering_ws/devel/.private/my_vs6577_moveit_config/lib/pkgconfig/my_vs6577_moveit_config.pc

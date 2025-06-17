@@ -1,0 +1,1 @@
+/home/cerlab/depowdering_ws/devel/.private/pcl_sensor_data/share/roseus/ros/pcl_sensor_data/srv/StopRecording.l

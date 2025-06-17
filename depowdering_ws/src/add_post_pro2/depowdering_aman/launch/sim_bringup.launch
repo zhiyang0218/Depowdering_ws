@@ -1,0 +1,60 @@
+<launch>
+    
+    <param name="robot_description" command="xacro $(find depowdering_aman)/urdf/depowdering_gripper_robot.xacro"/>
+    <param name="object_pose_file" type="string" value="$(find depowdering_aman)/config/test_config.csv"/>
+    <param name="move_group/planning_pipelines/ompl/constraint_approximations_path" value="$(find depowdering_aman)/config/constraint.yaml"/>
+
+    <arg name="robot_name" default="add_post_pro_depowdering" />
+    <arg name="world_path" default="$(find add_post_pro_simulation)/world/add_post_pro.world"/>
+    <env name="GAZEBO_MODEL_PATH" value="$(find add_post_pro_simulation)/gazebo_models/"/>
+
+    <arg name="x" default="0.0"/>
+    <arg name="y" default="0.0"/>
+    <arg name="z" default="0.096"/>
+
+    <!-- Launch Gazebo world in paused mode -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(arg world_path)"/>
+        <arg name="paused" value="false"/>
+    </include>   
+    
+    <!-- Spawn the robot in Gazebo -->
+    <node name="spawn_the_robot" pkg="gazebo_ros" type="spawn_model" output="screen"
+          args="-urdf -param robot_description -model $(arg robot_name) -x $(arg x) -y $(arg y) -z $(arg z)"  />
+
+    <!-- Load the controllers-->
+
+    <rosparam command="load" file="$(find depowdering_aman)/config/controllers.yaml"/>
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+    ns="/$(arg robot_name)" args="joint_state_controller arm_controller gripper_controller --timeout 60" />
+
+
+    <!-- Convert joint states to TF transform for rviz and rqt-->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  
+            output="screen" respawn="false">
+        <remap from="/joint_states" to="/$(arg robot_name)/joint_states" />
+    </node>
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <param name="use_gui" value="false"/>
+        <param name="publish_frequency" type="double" value="125.0" />
+        <rosparam param="source_list" subst_value = "true">[/$(arg robot_name)/joint_states]</rosparam>
+    </node>
+
+    <include file= "$(find add_post_pro_gripper_config)/launch/planning_context.launch" >
+        <arg name="load_robot_description" value="false" />
+    </include>
+
+    <include file= "$(find add_post_pro_gripper_config)/launch/move_group.launch" >
+        <arg name="publish_monitored_planning_scene" value="true" />
+    </include>
+
+    <include file= "$(find add_post_pro_gripper_config)/launch/moveit_rviz.launch" >
+        <arg name="rviz_config" value="$(find add_post_pro_gripper_config)/launch/moveit.rviz" />
+    </include>
+
+    <!-- Setup Planning Scene and Spawn Objects -->
+    <node name="powder_box_spawn" pkg="depowdering_aman" type="generate_pickup_box.py"                  output="screen"/> 
+    <node name="setup_rviz_scene" pkg="depowdering_aman" type="add_object_in_planning_gripper_scene.py" output="screen"/> 
+    
+</launch>

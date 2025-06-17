@@ -1,0 +1,2 @@
+robotic_depowdering
+-DCATKIN_DEVEL_PREFIX=/home/abdulhamid/Downloads/Robotic-Depowdering-for-Additive-Manufacturing-Via-Pose-Tracking-main/devel -DCMAKE_INSTALL_PREFIX=/home/abdulhamid/Downloads/Robotic-Depowdering-for-Additive-Manufacturing-Via-Pose-Tracking-main/install -G Unix Makefiles

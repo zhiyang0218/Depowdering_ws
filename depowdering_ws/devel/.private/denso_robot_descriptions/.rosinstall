@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/cerlab/depowdering_ws/devel/.private/denso_robot_descriptions/setup.sh

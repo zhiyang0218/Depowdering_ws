@@ -1,0 +1,299 @@
+<?xml version="1.0" ?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="add_post_pro_robot_b120">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="arm">
+        <joint name="joint_w" />
+        <joint name="joint_1" />
+        <joint name="joint_2" />
+        <joint name="joint_3" />
+        <joint name="joint_4" />
+        <joint name="joint_5" />
+        <joint name="joint_6" />
+    </group>
+    <!--group name="eef">
+        <joint name="end_effector_magnet" />
+        <joint name="end_effector_depstech_holder" />
+        <joint name="camera_link_joint" />
+        <joint name="end_effector_scanner_holder" />
+        <joint name="end_effector_scanner" />
+        <joint name="laser_joint" />
+        <joint name="realsense_joint" />
+        <joint name="color_joint" />
+        <joint name="depth_joint" />
+        <joint name="ired1_joint" />
+        <joint name="ired2_joint" />
+        <joint name="end_effector_mount" />
+    </group-->
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="laser_test_default" group="arm">
+        <joint name="joint_1" value="-1.5708" />
+        <joint name="joint_2" value="0.2603" />
+        <joint name="joint_3" value="1.6792" />
+        <joint name="joint_4" value="0" />
+        <joint name="joint_5" value="1.2198" />
+        <joint name="joint_6" value="0" />
+
+   </group_state>
+ <group_state name="Orignal" group="arm">
+       <joint name="joint_1" value="0" />
+        <joint name="joint_2" value="0" />
+        <joint name="joint_3" value="0" />
+        <joint name="joint_4" value="0" />
+        <joint name="joint_5" value="0" />
+        <joint name="joint_6" value="0" />
+    </group_state>
+   <!--group_state name="turntable_orientation" group="arm">
+        <joint name="joint_1" value="1.57" />
+        <joint name="joint_2" value="0.6793" />
+        <joint name="joint_3" value="1.7832" />
+        <joint name="joint_4" value="-0.0550" />
+        <joint name="joint_5" value="0.729" />
+        <joint name="joint_6" value="-4.0615" />
+  </group_state-->
+ <group_state name="rough_depowdering_orientation" group="arm">
+       <joint name="joint_1" value="-1.57" />
+        <joint name="joint_2" value="0.6793" />
+        <joint name="joint_3" value="1.7832" />
+        <joint name="joint_4" value="-0.0550" />
+        <joint name="joint_5" value="0.729" />
+        <joint name="joint_6" value="-4.0615" />
+    </group_state>
+ <group_state name="down_to_powderbox" group="arm">
+       <joint name="joint_1" value="-1.57" />
+        <joint name="joint_2" value="0.8" />
+        <joint name="joint_3" value="1.8832" />
+        <joint name="joint_4" value="-0.0550" />
+        <joint name="joint_5" value="0.529" />
+        <joint name="joint_6" value="-4.0615" />
+     </group_state>
+ <group_state name="up1" group="arm">
+       <joint name="joint_1" value="-1.57" />
+        <joint name="joint_2" value="0.6793" />
+        <joint name="joint_3" value="1.7832" />
+        <joint name="joint_4" value="-0.0550" />
+        <joint name="joint_5" value="0.729" />
+        <joint name="joint_6" value="-4.0615" />
+   </group_state>
+ <group_state name="Pick_object_mid" group="arm">
+       <joint name="joint_1" value="-1.53589" />
+        <joint name="joint_2" value="0.837758" />
+        <joint name="joint_3" value="1.90241" />
+        <joint name="joint_4" value="0" />
+        <joint name="joint_5" value="0.383972" />
+        <joint name="joint_6" value="-4.69494" />
+    </group_state>
+    <group_state name="up1" group="arm">
+       <joint name="joint_1" value="-1.57" />
+        <joint name="joint_2" value="0.6793" />
+        <joint name="joint_3" value="1.7832" />
+        <joint name="joint_4" value="-0.0550" />
+        <joint name="joint_5" value="0.729" />
+        <joint name="joint_6" value="-4.0615" />
+   </group_state>
+<group_state name="Pick_object_mid_right" group="arm">
+       <joint name="joint_1" value="-1.67552" />
+        <joint name="joint_2" value="0.820305" />
+        <joint name="joint_3" value="1.919862" />
+        <joint name="joint_4" value="-0.05236" />
+        <joint name="joint_5" value="0.383972" />
+        <joint name="joint_6" value="-4.712389" />
+    </group_state>
+    <group_state name="up1" group="arm">
+       <joint name="joint_1" value="-1.57" />
+        <joint name="joint_2" value="0.6793" />
+        <joint name="joint_3" value="1.7832" />
+        <joint name="joint_4" value="-0.0550" />
+        <joint name="joint_5" value="0.729" />
+        <joint name="joint_6" value="-4.0615" />
+   </group_state>
+<group_state name="Pick_object_mid_left" group="arm">
+       <joint name="joint_1" value="-1.3962634016" />
+        <joint name="joint_2" value="0.8203047484" />
+        <joint name="joint_3" value="1.919862" />
+        <joint name="joint_4" value="0" />
+        <joint name="joint_5" value="0.401425728" />
+        <joint name="joint_6" value="-4.50295" />
+    </group_state>
+    <group_state name="up1" group="arm">
+       <joint name="joint_1" value="-1.57" />
+        <joint name="joint_2" value="0.6793" />
+        <joint name="joint_3" value="1.7832" />
+        <joint name="joint_4" value="-0.0550" />
+        <joint name="joint_5" value="0.729" />
+        <joint name="joint_6" value="-4.0615" />
+   </group_state>
+ <group_state name="Pick_object_mid_front" group="arm">
+       <joint name="joint_1" value="-1.53589" />
+        <joint name="joint_2" value="0.994838" />
+        <joint name="joint_3" value="1.5708" />
+        <joint name="joint_4" value="-0.0349066" />
+        <joint name="joint_5" value="0.541052" />
+        <joint name="joint_6" value="-4.4855" />
+    </group_state>
+    <group_state name="up1" group="arm">
+       <joint name="joint_1" value="-1.57" />
+        <joint name="joint_2" value="0.6793" />
+        <joint name="joint_3" value="1.7832" />
+        <joint name="joint_4" value="-0.0550" />
+        <joint name="joint_5" value="0.729" />
+        <joint name="joint_6" value="-4.0615" />
+   </group_state>
+<group_state name="Pick_object_left_front" group="arm">
+       <joint name="joint_1" value="-1.41372" />
+        <joint name="joint_2" value="0.994838" />
+        <joint name="joint_3" value="1.5708" />
+        <joint name="joint_4" value="-0.0349066" />
+        <joint name="joint_5" value="0.541052" />
+        <joint name="joint_6" value="-4.59022" />
+    </group_state>
+    <group_state name="up1" group="arm">
+       <joint name="joint_1" value="-1.57" />
+        <joint name="joint_2" value="0.6793" />
+        <joint name="joint_3" value="1.7832" />
+        <joint name="joint_4" value="-0.0550" />
+        <joint name="joint_5" value="0.729" />
+        <joint name="joint_6" value="-4.0615" />
+   </group_state>
+<group_state name="Pick_object_right_front" group="arm">
+       <joint name="joint_1" value="-1.69297" />
+        <joint name="joint_2" value="0.994838" />
+        <joint name="joint_3" value="1.5708" />
+        <joint name="joint_4" value="-0.0349066" />
+        <joint name="joint_5" value="0.541052" />
+        <joint name="joint_6" value="-4.72984" />
+    </group_state>
+ <group_state name="up1_back" group="arm">
+       <joint name="joint_1" value="-1.57" />
+        <joint name="joint_2" value="0.6793" />
+        <joint name="joint_3" value="1.7832" />
+        <joint name="joint_4" value="-0.0550" />
+        <joint name="joint_5" value="0.729" />
+        <joint name="joint_6" value="-1.43117" />
+   </group_state>
+<group_state name="Pick_object_mid_back" group="arm">
+       <joint name="joint_1" value="-1.55334" />
+        <joint name="joint_2" value="0.73304" />
+        <joint name="joint_3" value="2.16421" />
+        <joint name="joint_4" value="-0.017453" />
+        <joint name="joint_5" value="0.244346" />
+        <joint name="joint_6" value="-1.43117" />
+    </group_state>
+    <group_state name="up2_back" group="arm">
+       <joint name="joint_1" value="-1.71042" />
+        <joint name="joint_2" value="0.5061" />
+        <joint name="joint_3" value="2.042" />
+        <joint name="joint_4" value="0" />
+        <joint name="joint_5" value="0.27925" />
+        <joint name="joint_6" value="-1.58825" />
+   </group_state>
+<group_state name="Pick_object_right_back" group="arm">
+       <joint name="joint_1" value="-1.71042" />
+        <joint name="joint_2" value="0.698132" />
+        <joint name="joint_3" value="2.16421" />
+        <joint name="joint_4" value="0" />
+        <joint name="joint_5" value="0.27925" />
+        <joint name="joint_6" value="-1.58825" />
+    </group_state>
+    <group_state name="up3_back" group="arm">
+       <joint name="joint_1" value="-1.37881" />
+        <joint name="joint_2" value="0.6793" />
+        <joint name="joint_3" value="1.7832" />
+        <joint name="joint_4" value="-0.0550" />
+        <joint name="joint_5" value="0.729" />
+        <joint name="joint_6" value="-1.43117" />
+   </group_state>
+<group_state name="Pick_object_left_back" group="arm">
+       <joint name="joint_1" value="-1.37881" />
+        <joint name="joint_2" value="0.715585" />
+        <joint name="joint_3" value="2.16421" />
+        <joint name="joint_4" value="0" />
+        <joint name="joint_5" value="0.22689" />
+        <joint name="joint_6" value="-1.256637" />
+    </group_state>
+    <group_state name="up_last_back" group="arm">
+       <joint name="joint_1" value="-1.57" />
+        <joint name="joint_2" value="0.6793" />
+        <joint name="joint_3" value="1.7832" />
+        <joint name="joint_4" value="-0.0550" />
+        <joint name="joint_5" value="0.729" />
+        <joint name="joint_6" value="-1.43117" />
+   </group_state>
+ <group_state name="store_orientation" group="arm">
+        <joint name="joint_1" value="1.57" />
+        <joint name="joint_2" value="0.6793" />
+        <joint name="joint_3" value="1.7832" />
+        <joint name="joint_4" value="-0.0550" />
+        <joint name="joint_5" value="0.729" />
+        <joint name="joint_6" value="-4.0615" />
+    </group_state>
+ <group_state name="down_to_store_area" group="arm">
+       <joint name="joint_1" value="1.57" />
+        <joint name="joint_2" value="0.8" />
+        <joint name="joint_3" value="1.8832" />
+        <joint name="joint_4" value="-0.0550" />
+        <joint name="joint_5" value="0.529" />
+        <joint name="joint_6" value="-4.0615" />
+    </group_state>
+ <group_state name="up2" group="arm">
+       <joint name="joint_1" value="1.57" />
+        <joint name="joint_2" value="0.6793" />
+        <joint name="joint_3" value="1.7832" />
+        <joint name="joint_4" value="-0.0550" />
+        <joint name="joint_5" value="0.729" />
+        <joint name="joint_6" value="-4.0615" />
+ </group_state>
+
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <!--end_effector name="eef" parent_link="J6" group="eef" parent_group="arm" /-->
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="world_j" type="fixed" parent_frame="world" child_link="base_link" />
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <!--disable_collisions link1="D415_camera" link2="EEF_scancontrol" reason="Never" />
+    <disable_collisions link1="D415_camera" link2="EEF_sensor_holder" reason="Adjacent" />
+    <disable_collisions link1="D415_camera" link2="EEF_tool_mount" reason="Never" />
+    <disable_collisions link1="D415_camera" link2="J3" reason="Never" />
+    <disable_collisions link1="D415_camera" link2="J5" reason="Never" />
+    <disable_collisions link1="D415_camera" link2="J6" reason="Never" />
+    <disable_collisions link1="D415_camera" link2="depstech_camera_link" reason="Never" />
+    <disable_collisions link1="EEF_scancontrol" link2="EEF_sensor_holder" reason="Adjacent" />
+    <disable_collisions link1="EEF_scancontrol" link2="EEF_tool_mount" reason="Never" />
+    <disable_collisions link1="EEF_scancontrol" link2="J3" reason="Never" />
+    <disable_collisions link1="EEF_scancontrol" link2="J5" reason="Never" />
+    <disable_collisions link1="EEF_scancontrol" link2="J6" reason="Never" />
+    <disable_collisions link1="EEF_scancontrol" link2="depstech_camera_link" reason="Never" />
+    <disable_collisions link1="EEF_sensor_holder" link2="EEF_tool_mount" reason="Default" />
+    <disable_collisions link1="EEF_sensor_holder" link2="J3" reason="Never" />
+    <disable_collisions link1="EEF_sensor_holder" link2="J5" reason="Never" />
+    <disable_collisions link1="EEF_sensor_holder" link2="J6" reason="Adjacent" />
+    <disable_collisions link1="EEF_sensor_holder" link2="depstech_camera_link" reason="Adjacent" />
+    <disable_collisions link1="EEF_tool_mount" link2="J2" reason="Never" />
+    <disable_collisions link1="EEF_tool_mount" link2="J3" reason="Never" />
+    <disable_collisions link1="EEF_tool_mount" link2="J5" reason="Never" />
+    <disable_collisions link1="EEF_tool_mount" link2="J6" reason="Adjacent" />
+    <disable_collisions link1="EEF_tool_mount" link2="depstech_camera_link" reason="Never" /-->
+    <disable_collisions link1="J1" link2="J2" reason="Adjacent" />
+    <disable_collisions link1="J1" link2="base_link" reason="Adjacent" />
+    <disable_collisions link1="J2" link2="J3" reason="Adjacent" />
+    <disable_collisions link1="J2" link2="J4" reason="Never" />
+    <disable_collisions link1="J2" link2="J5" reason="Never" />
+    <disable_collisions link1="J2" link2="J6" reason="Never" />
+    <disable_collisions link1="J2" link2="base_link" reason="Never" />
+    <disable_collisions link1="J3" link2="J4" reason="Adjacent" />
+    <disable_collisions link1="J3" link2="J5" reason="Never" />
+    <disable_collisions link1="J3" link2="J6" reason="Never" />
+    <!--disable_collisions link1="J3" link2="depstech_camera_link" reason="Never" /-->
+    <disable_collisions link1="J4" link2="J5" reason="Adjacent" />
+    <disable_collisions link1="J4" link2="J6" reason="Never" />
+    <!--disable_collisions link1="J4" link2="depstech_camera_link" reason="Never" /-->
+    <disable_collisions link1="J5" link2="J6" reason="Adjacent" />
+    <!--disable_collisions link1="J5" link2="depstech_camera_link" reason="Never" /-->
+    <!--disable_collisions link1="J6" link2="depstech_camera_link" reason="Never" /-->
+</robot>

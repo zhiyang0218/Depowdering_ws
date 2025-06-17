@@ -1,0 +1,4 @@
+Symlinking /home/cerlab/depowdering_ws/devel/lib/pkgconfig/lidar_zhiyan.pc
+Symlinking /home/cerlab/depowdering_ws/devel/lib/lidar_zhiyan/pointcloud_to_csv.py
+Symlinking /home/cerlab/depowdering_ws/devel/share/lidar_zhiyan/cmake/lidar_zhiyanConfig.cmake
+Symlinking /home/cerlab/depowdering_ws/devel/share/lidar_zhiyan/cmake/lidar_zhiyanConfig-version.cmake

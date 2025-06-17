@@ -1,0 +1,8 @@
+prefix=/home/cerlab/depowdering_ws/devel/.private/micro_epsilon_scancontrol_description
+
+Name: micro_epsilon_scancontrol_description
+Description: Description of micro_epsilon_scancontrol_description
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
