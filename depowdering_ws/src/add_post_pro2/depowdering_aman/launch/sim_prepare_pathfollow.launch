@@ -1,0 +1,42 @@
+<launch>
+    <!-- Parameters and includes -->
+    <param name="robot_description" command="xacro $(find depowdering_aman)/urdf/depowdering_gripper_robot.xacro"/>
+    
+    <!-- Arguments -->
+    <arg name="robot_name" default="add_post_pro_depowdering" />
+    <arg name="world_path" default="$(find add_post_pro_simulation)/world/add_post_pro.world"/>
+    <arg name="x" default="0.0"/>
+    <arg name="y" default="0.0"/>
+    <arg name="z" default="0.096"/>
+
+    <!-- Gazebo and robot spawn -->
+    <env name="GAZEBO_MODEL_PATH" value="$(find add_post_pro_simulation)/gazebo_models/"/>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(arg world_path)"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+    </include>
+    <node name="spawn_the_robot" pkg="gazebo_ros" type="spawn_model" output="screen"
+          args="-urdf -param robot_description -model $(arg robot_name) -x $(arg x) -y $(arg y) -z $(arg z)" />
+
+    <!-- Controllers -->
+    <rosparam command="load" file="$(find depowdering_aman)/config/controllers.yaml"/>
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+          ns="/$(arg robot_name)" args="joint_state_controller arm_controller gripper_controller --timeout=60" />
+
+    <!-- TF and state publishing -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+          output="screen" respawn="false">
+        <remap from="/joint_states" to="/$(arg robot_name)/joint_states" />
+    </node>
+    <node pkg="tf" type="static_transform_publisher" name="powder_box_broadcaster"
+          args="0.0 -0.585 -0.095 0 0 0 world powder_box 100" />
+
+    <!-- MoveIt! -->
+    <include file="$(find add_post_pro_gripper_config)/launch/move_group.launch">
+        <arg name="publish_monitored_planning_scene" value="true" />
+    </include>
+    <include file="$(find add_post_pro_gripper_config)/launch/moveit_rviz.launch">
+        <arg name="rviz_config" value="$(find add_post_pro_gripper_config)/launch/moveit.rviz" />
+    </include>
+</launch>

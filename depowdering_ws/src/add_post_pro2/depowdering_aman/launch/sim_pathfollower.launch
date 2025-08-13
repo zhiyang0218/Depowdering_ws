@@ -1,0 +1,15 @@
+<launch>
+    <!-- Use simulation time -->
+    <param name="/use_sim_time" value="true"/>
+    
+    <!-- Path follower node with proper remapping -->
+    <node name="path_follower_node" pkg="depowdering_aman" type="path_follower.py" output="screen">
+        <param name="path_file" value="$(find depowdering_aman)/config/robot_path_area1.csv"/>
+        <param name="sim" value="true"/>
+        
+        <!-- Critical remappings -->
+        <remap from="/follow_joint_trajectory" to="/add_post_pro_depowdering/arm_controller/follow_joint_trajectory"/>
+        <remap from="/joint_states" to="/add_post_pro_depowdering/joint_states"/>
+    </node>
+</launch>
+
