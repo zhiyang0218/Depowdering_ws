@@ -4,7 +4,7 @@
     
     <!-- Path follower node with proper remapping -->
     <node name="path_follower_node" pkg="depowdering_aman" type="path_follower.py" output="screen">
-        <param name="path_file" value="$(find depowdering_aman)/config/robot_path_area1.csv"/>
+        <param name="path_file" value="$(find lidar_zhiyan)/src/robot_path_area1.csv"/>
         <param name="sim" value="true"/>
         
         <!-- Critical remappings -->
@@ -12,4 +12,5 @@
         <remap from="/joint_states" to="/add_post_pro_depowdering/joint_states"/>
     </node>
 </launch>
+
 

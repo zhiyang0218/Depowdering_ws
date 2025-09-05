@@ -43,8 +43,7 @@ def check_controllers_ready():
         return False
 
 def move_through_waypoints(waypoints_df, arm_group):
-    """ Move through waypoints using set_pose_target and go() """
-    # Set fixed orientation (same as your working code)
+    waypoints = []
     fixed_orientation = Pose().orientation
     fixed_orientation.x = 0.0
     fixed_orientation.y = 1.0
@@ -52,34 +51,22 @@ def move_through_waypoints(waypoints_df, arm_group):
     fixed_orientation.w = 0.0
 
     for _, row in waypoints_df.iterrows():
-        # Create target pose
-        target_pose = PoseStamped()
-        target_pose.header.frame_id = "world"
-        target_pose.pose.position.x = row['x']
-        target_pose.pose.position.y = row['y']
-        target_pose.pose.position.z = row['z']
-        target_pose.pose.orientation = fixed_orientation
-        
-        # Set start state and target
-        arm_group.set_start_state_to_current_state()
-        arm_group.set_pose_target(target_pose)
-        
-        # Add diagnostic info
-        rospy.loginfo(f"Moving to: x={row['x']:.3f}, y={row['y']:.3f}, z={row['z']:.3f}")
-        
-        # Execute motion with critical delay
-        rospy.sleep(0.5)
-        success = arm_group.go(wait=True)
-        arm_group.stop()
-        arm_group.clear_pose_targets()
-        
-        if not success:
-            rospy.logerr(f"Failed to move to waypoint: {row}")
-            return False
-            
-        rospy.sleep(0.1)  # Brief pause between waypoints
-        
-    return True
+        pose = Pose()
+        pose.position.x = row['x']
+        pose.position.y = row['y']
+        pose.position.z = row['z']
+        pose.orientation = fixed_orientation
+        waypoints.append(copy.deepcopy(pose))
+
+    (plan, fraction) = arm_group.compute_cartesian_path(
+        waypoints,
+        eef_step=0.01,   # 1 cm 插值
+        jump_threshold=0.0
+    )
+    if fraction < 1.0:
+        rospy.logwarn(f"Path only achieved fraction: {fraction}")
+    return arm_group.execute(plan, wait=True)
+
 
 
 def path_follower_commander(path_points, sim=True):
@@ -107,18 +94,39 @@ def path_follower_commander(path_points, sim=True):
     
     input("Press Enter to move to 'ready' position...")
     
-    # Move to ready position with same workflow as working code
+    # Slow down a bit
+    arm_group.set_max_velocity_scaling_factor(0.2)
+    arm_group.set_max_acceleration_scaling_factor(0.2)
+
+    # Move to 'rest'
+    rospy.loginfo("Moving to 'rest' position")
+    arm_group.set_start_state_to_current_state()
+    arm_group.set_named_target("rest")
+    rospy.sleep(0.2)
+    success_flag, plan, planning_time, error_code = arm_group.plan()
+   # plan to the named target
+    if not success_flag or not plan.joint_trajectory.points:
+        rospy.logerr("Empty plan to 'rest'")
+        return
+    success = arm_group.execute(plan, wait=True)
+    arm_group.stop()
+    arm_group.clear_pose_targets()
+    if not success:
+        rospy.logerr("Failed to move to 'rest' position")
+        return
+
+     # Move to 'ready'
     rospy.loginfo("Moving to 'ready' position")
     arm_group.set_start_state_to_current_state()
     arm_group.set_named_target("ready")
-    
-    # CRITICAL: Add execution delay like working code
-    rospy.sleep(0.5)
-    
-    success = arm_group.go(wait=True)
+    rospy.sleep(0.2)
+    success_flag, plan, planning_time, error_code = arm_group.plan()
+    if not success_flag or not plan.joint_trajectory.points:
+        rospy.logerr("Empty plan to 'ready'")
+        return
+    success = arm_group.execute(plan, wait=True)
     arm_group.stop()
     arm_group.clear_pose_targets()
-    
     if not success:
         rospy.logerr("Failed to move to 'ready' position")
         return
