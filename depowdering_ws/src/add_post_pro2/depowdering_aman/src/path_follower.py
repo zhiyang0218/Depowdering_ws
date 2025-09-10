@@ -97,44 +97,48 @@ def compute_cartesian_path_robust(group, waypoints, eef_step=0.01, jump_threshol
 # ---------- waypoint execution ----------
 def move_through_waypoints(waypoints_df, arm_group):
     waypoints = []
-    fixed_orientation = Pose().orientation
-    fixed_orientation.x = 0.0
-    fixed_orientation.y = 1.0
-    fixed_orientation.z = 0.0
-    fixed_orientation.w = 0.0
+    robot_height = 0.096  # same offset as trajectory_commander
 
-    for i, row in waypoints_df.iterrows():
-        pose = Pose()
-        pose.position.x = float(row['x'])
-        pose.position.y = float(row['y'])
-        pose.position.z = float(row['z'])
-        pose.orientation = fixed_orientation
-        waypoints.append(copy.deepcopy(pose))
+    for idx, row in waypoints_df.iterrows():
+        ps = PoseStamped()
+        ps.header.frame_id = "powder_box"
+        ps.pose.position.x = float(row['x'])
+        ps.pose.position.y = float(row['y'])
+        ps.pose.position.z = float(row['z'])
 
-    # Use robust wrapper to call compute_cartesian_path
-    plan, fraction = compute_cartesian_path_robust(arm_group, waypoints, eef_step=0.01, jump_threshold=0.0)
+        # Orientation same as trajectory_commander
+        ps.pose.orientation.x = 0.0
+        ps.pose.orientation.y = 1.0
+        ps.pose.orientation.z = 0.0
+        ps.pose.orientation.w = 0.0
 
-    if plan is None:
-        rospy.logerr("Failed to compute cartesian path (no plan)")
+        # Transform into world frame
+        ps_world = transform_pose(ps, "powder_box", "world")
+        if ps_world is None:
+            rospy.logwarn(f"[WAYPOINT {idx}] Transform failed, skipping")
+            continue
+
+        ps_world.pose.position.z += robot_height
+        waypoints.append(copy.deepcopy(ps_world.pose))
+
+    if not waypoints:
+        rospy.logerr("No valid waypoints to plan through!")
         return False
 
-    if fraction < 1.0:
-        rospy.logwarn(f"Path only achieved fraction: {fraction}")
+    # ✅ Correct API for Noetic
+    (plan, fraction) = arm_group.compute_cartesian_path(
+        waypoints,
+        eef_step=0.01,         # 1 cm resolution
+        avoid_collisions=True, # keep collision checking
+        path_constraints=None
+    )
 
-    # execute and check result
-    success = False
-    try:
-        success = arm_group.execute(plan, wait=True)
-    except Exception as e:
-        rospy.logerr(f"Exception when executing cartesian plan: {e}")
-        success = False
+    rospy.loginfo(f"Cartesian path fraction: {fraction:.3f}")
+    if fraction <= 0.0 or not plan.joint_trajectory.points:
+        rospy.logerr("Cartesian path planning failed.")
+        return False
 
-    if not success:
-        rospy.logerr("Execution of cartesian path failed (CONTROL_FAILED or similar).")
-    else:
-        rospy.loginfo("Cartesian path executed successfully.")
-
-    return bool(success)
+    return arm_group.execute(plan, wait=True)
 
 # ---------- main commander ----------
 def path_follower_commander(path_points, sim=True):
